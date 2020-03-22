@@ -1,0 +1,16 @@
+.select_item{
+    display: flex;
+    flex-direction: row;
+}
+h1{
+    margin: 15px 0px;
+    font-size: 25px;
+}
+.Select_item_class{
+    width: 1200px;
+    height: 500px;
+}
+.Available_item_class{
+    width: 1200px;
+    height: 500px;
+}
