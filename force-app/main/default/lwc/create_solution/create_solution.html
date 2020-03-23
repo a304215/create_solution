@@ -8,23 +8,29 @@
             options={options}
             onchange={handleChange} >
         </lightning-combobox>
-        <lightning-button variant="brand" label = "submit" onclick = "{get_select_value}" style="margin-top: 20px;"></lightning-button>
+        <lightning-button variant="brand" label = "submit" onclick = "{get_select_value}" style="margin-top: 20px; height:30px;width:70px"></lightning-button>
     </div>
     <h1>Select_item</h1>
     <div class="Select_item_class">
-        <div if:true={get_item_div} style="width: 1200px; height: 400px;overflow: auto;">
-            <table style="padding-left: 20px;width: 1000px;">
+        <div if:true={get_item_div} style="width: 790px; height: 400px;overflow: auto;">
+            <table style="width: 1000px;">
                 <tr style="height: 30px;">
                     <th>排序號碼</th>
                     <th>解決方案ID</th>
+                    <th>主要項目</th>
                     <th>製作食品</th>
+                    <th>型號</th>
+                    <th>數量</th>
                 </tr>
                 <template for:each={solution_detail_item} for:item="item_detail" >
                     <tr key = {item_detail} style="margin: 20px;">
                         <td><span>{item_detail.SNO}</span></td>
                         <td><span>{item_detail.SolutionID}</span></td>
+                        <td><span>{item_detail.Major}</span></td>
                         <td><span>{item_detail.FoodName}</span></td>
-                        <td><lightning-button variant="brand" label = "delete" onclick = "{delete_the_item}" name={item_detail.Id}></lightning-button></td>
+                        <td><span>{item_detail.Model}</span></td>
+                        <td><span>{item_detail.Qty}</span></td>
+                        <td><lightning-button variant="brand" label = "del" onclick = "{delete_the_item}" name={item_detail.Id}></lightning-button></td>
                     </tr>
                     <tr  key = {item_detail}>
                         <td>&nbsp;</td>
@@ -35,18 +41,24 @@
     </div>
     <h1>Available item</h1>
     <div class="Available_item_class">
-        <div if:true={Available_item_div} style = "width: 1200px;height: 400px;overflow: auto;">
-            <table style="padding-left: 20px;width: 1000px;">
+        <div if:true={Available_item_div} style="width: 790px; height: 400px;overflow: auto;">
+            <table style="width: 1000px;">
                 <tr style="height: 30px;">
-                    <th>排列序號</th>
+                    <th>排序號碼</th>
                     <th>解決方案ID</th>
+                    <th>主要項目</th>
                     <th>製作食品</th>
+                    <th>型號</th>
+                    <th>數量</th>
                 </tr>
                 <template for:each={Available_detail_item} for:item = "item_detail">
                     <tr key = {item_detail}>
                         <td><span>{item_detail.SNO}</span></td>
                         <td><span>{item_detail.SolutionID}</span></td>
+                        <td><span>{item_detail.Major}</span></td>
                         <td><span>{item_detail.FoodName}</span></td>
+                        <td><span>{item_detail.Model}</span></td>
+                        <td><span>{item_detail.Qty}</span></td>
                         <td><lightning-button variant="brand" label = "add" onclick = "{add_the_item}" name = {item_detail.Id}></lightning-button></td>
                     </tr>
                     <tr key = {item_detail}>
